@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         List<Usuario> usuarios = db.usuarioDAO().buscarTodos();
         if(usuarios == null || usuarios.size() == 0){
             Usuario usuario = new Usuario();
-            usuario.setLevel(1);
-            usuario.setNome("Osmar Junior");
-            usuario.setPontos(1000);
+            usuario.setLevel(2);
+            usuario.setNome("JJ");
+            usuario.setPontos(1500);
 
             db.usuarioDAO().adicionarUsuario(usuario);
             StringBuilder sb = new StringBuilder();
@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
             tvResultado.setText(sb.toString());
         }else{
+            StringBuilder sb = new StringBuilder();
             for(Usuario usuario: usuarios){
-                StringBuilder sb = new StringBuilder();
                 sb.append(usuario.getNome());
                 sb.append(" Pontos: ");
                 sb.append(usuario.getPontos());
                 sb.append(System.getProperty("line.separator"));
-                tvResultado.setText(sb.toString());
             }
+            tvResultado.setText(sb.toString());
         }
     }
 }

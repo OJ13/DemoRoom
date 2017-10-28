@@ -9,13 +9,13 @@ import br.com.osmarjunior.demoroom.persistencia.dao.UsuarioDAO;
 import br.com.osmarjunior.demoroom.persistencia.entidades.Trofeu;
 import br.com.osmarjunior.demoroom.persistencia.entidades.Usuario;
 
-@Database(entities = {Usuario.class, Trofeu.class}, version = 1)
+@Database(entities = {Usuario.class, Trofeu.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static  AppDatabase INSTANCE;
 
-    public abstract UsuarioDAO usuarioDAO;
-    public abstract TrofeuDAO trofeuDAO;
+    public abstract UsuarioDAO usuarioDAO();
+    public abstract TrofeuDAO trofeuDAO();
 
     public static AppDatabase getDatabase(Context context){
         if(INSTANCE == null){

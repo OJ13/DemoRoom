@@ -9,7 +9,7 @@ import android.arch.persistence.room.PrimaryKey;
         parentColumns = "id",
         childColumns = "userId"))
 public class Trofeu {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private int userId;
     private String descricao;
